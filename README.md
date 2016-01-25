@@ -2,7 +2,7 @@
 
 ##Demo
 
-![](http://i.imgur.com/OUkLi.gif)
+![](art/demo.gif)
 
 ##Description
 
