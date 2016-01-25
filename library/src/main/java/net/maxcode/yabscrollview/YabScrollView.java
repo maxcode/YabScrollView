@@ -1,4 +1,4 @@
-package net.maxcode;
+package net.maxcode.yabscrollview;
 
 import android.animation.TimeInterpolator;
 import android.annotation.TargetApi;
@@ -131,11 +131,6 @@ public class YabScrollView extends ScrollView {
 
     public boolean isBottomHit() {
         return mBottomHit;
-    }
-
-    public interface ISwipeListener{
-        void onSwipeUp(YabScrollView pYabScrollView);
-        void onSwipeDown(YabScrollView pYabScrollView);
     }
 
     public static class GesturesDetectorListener extends GestureDetector.SimpleOnGestureListener{
