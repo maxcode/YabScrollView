@@ -1,4 +1,4 @@
-package com.andreiverdes.haiosview.sample;
+package net.maxcode.yabscrollview.sample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

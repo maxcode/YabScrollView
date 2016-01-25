@@ -1,4 +1,4 @@
-package com.andreiverdes.haiosview.sample;
+package net.maxcode.yabscrollview.sample;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.andreiverdes;
+package net.maxcode;
 
 import android.animation.TimeInterpolator;
 import android.annotation.TargetApi;
@@ -17,7 +17,7 @@ import java.lang.ref.WeakReference;
 /**
  * Created by andrei on 03/12/15.
  */
-public class HaiosView extends ScrollView {
+public class YabScrollView extends ScrollView {
 
     private static final int WIDTH_DEVIDER_OVERSCROLL_DISTANCE = 2;
     private static final float BOUNCE_ANIM_TIME = 300f;
@@ -31,17 +31,17 @@ public class HaiosView extends ScrollView {
     private int mMaxOverScrollDistance;
     private long mStartTime;
 
-    public HaiosView(final Context context) {
+    public YabScrollView(final Context context) {
         super(context);
         init();
     }
 
-    public HaiosView(final Context context, final AttributeSet attrs) {
+    public YabScrollView(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public HaiosView(final Context context, final AttributeSet attrs, final int defStyleAttr) {
+    public YabScrollView(final Context context, final AttributeSet attrs, final int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -134,8 +134,8 @@ public class HaiosView extends ScrollView {
     }
 
     public interface ISwipeListener{
-        void onSwipeUp(HaiosView pHaiosView);
-        void onSwipeDown(HaiosView pHaiosView);
+        void onSwipeUp(YabScrollView pYabScrollView);
+        void onSwipeDown(YabScrollView pYabScrollView);
     }
 
     public static class GesturesDetectorListener extends GestureDetector.SimpleOnGestureListener{
@@ -143,11 +143,11 @@ public class HaiosView extends ScrollView {
         private static final int SWIPE_THRESHOLD = 150;
         public static final int SWIPE_VELOCITY_THRESHOLD = 150;
 
-        private WeakReference<HaiosView> mHaiosViewWeakReference;
+        private WeakReference<YabScrollView> mYabScrollViewWeakReference;
         private WeakReference<ISwipeListener> mSwipeListenerWeakReference;
 
-        public GesturesDetectorListener(HaiosView pHaiosView){
-            this.mHaiosViewWeakReference = new WeakReference<>(pHaiosView);
+        public GesturesDetectorListener(YabScrollView pYabScrollView){
+            this.mYabScrollViewWeakReference = new WeakReference<>(pYabScrollView);
         }
 
         @Override public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
@@ -184,17 +184,17 @@ public class HaiosView extends ScrollView {
         }
 
         private void onSwipeUp() {
-            if(mHaiosViewWeakReference.get() != null && mHaiosViewWeakReference.get().isBottomHit()){
+            if(mYabScrollViewWeakReference.get() != null && mYabScrollViewWeakReference.get().isBottomHit()){
                 if(mSwipeListenerWeakReference != null && mSwipeListenerWeakReference.get() != null){
-                    this.mSwipeListenerWeakReference.get().onSwipeUp(mHaiosViewWeakReference.get());
+                    this.mSwipeListenerWeakReference.get().onSwipeUp(mYabScrollViewWeakReference.get());
                 }
             }
         }
 
         private void onSwipeDown() {
-            if(mHaiosViewWeakReference.get() != null && mHaiosViewWeakReference.get().isTopHit()){
+            if(mYabScrollViewWeakReference.get() != null && mYabScrollViewWeakReference.get().isTopHit()){
                 if(mSwipeListenerWeakReference != null && mSwipeListenerWeakReference.get() != null){
-                    mSwipeListenerWeakReference.get().onSwipeDown(mHaiosViewWeakReference.get());
+                    mSwipeListenerWeakReference.get().onSwipeDown(mYabScrollViewWeakReference.get());
                 }
             }
         }

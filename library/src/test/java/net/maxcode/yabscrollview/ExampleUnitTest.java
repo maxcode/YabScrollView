@@ -1,4 +1,4 @@
-package com.andreiverdes.haiosview;
+package net.maxcode.yabscrollview;
 
 import org.junit.Test;
 
