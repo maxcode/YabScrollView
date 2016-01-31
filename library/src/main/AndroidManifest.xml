@@ -1,4 +1,4 @@
-<manifest package="com.andreiverdes.haiosview"
+<manifest package="net.maxcode.yabscrollview"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
